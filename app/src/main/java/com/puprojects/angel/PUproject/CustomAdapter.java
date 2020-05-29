@@ -70,7 +70,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return phone_id.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView phone_id_txt, phone_name_txt, phone_number_txt, description_txt;
         LinearLayout mainLayout;
@@ -82,9 +82,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             phone_number_txt = itemView.findViewById(R.id.phone_number_txt);
             description_txt = itemView.findViewById(R.id.phone_description_txt);
             mainLayout = itemView.findViewById(R.id.mainLayout);
-            //Animate Recyclerview
-            Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
-            mainLayout.setAnimation(translate_anim);
+
         }
 
     }

@@ -31,10 +31,8 @@ public class UpdateActivity extends AppCompatActivity {
         update_button = findViewById(R.id.update_button);
         delete_button = findViewById(R.id.delete_button);
 
-        //First we call this
         getAndSetIntentData();
 
-        //Set actionbar name after getAndSetIntentData method
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setTitle(name);
@@ -43,7 +41,7 @@ public class UpdateActivity extends AppCompatActivity {
         update_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //And only then we call this
+
                 MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateActivity.this);
                 name = name_input.getText().toString().trim();
                 number = number_input.getText().toString().trim();
@@ -63,13 +61,11 @@ public class UpdateActivity extends AppCompatActivity {
     void getAndSetIntentData(){
         if(getIntent().hasExtra("id") && getIntent().hasExtra("name") &&
                 getIntent().hasExtra("number") && getIntent().hasExtra("description")){
-            //Getting Data from Intent
             id = getIntent().getStringExtra("id");
             name = getIntent().getStringExtra("name");
             number = getIntent().getStringExtra("number");
             description = getIntent().getStringExtra("description");
 
-            //Setting Intent Data
             name_input.setText(name);
             number_input.setText(number);
             description_input.setText(description);
